@@ -31,5 +31,5 @@ func TestCalculateTaxAndSave(t *testing.T) {
 
 	repository.AssertExpectations(t)
 	repository.AssertCalled(t, "SaveTax", 10.0)
-	repository.AssertNumberOfCalls(t, "SaveTax", 1)
+	repository.AssertNumberOfCalls(t, "SaveTax", 2)
 }
