@@ -7,6 +7,7 @@ import "testing"
 	Inside the directory that have the tests files run the following command:
 	> go test -v
 	> go test
+	> go test ./... (esse comando roda todos os tests que encontrar na a partir da pasta atual)
 
 	HOW TO RUN COVERAGE TESTS?
 	> go test -coverprofile=coverage.out
