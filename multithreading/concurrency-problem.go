@@ -16,6 +16,9 @@ RunConcurrencyRealProblem
 How to check the problem:
 In terminal enter:
 > ab -n 10000 -c 100 http://localhost:3000/
+After that runs:
+> curl http://localhost:3000
+and the results should be 10001, but you will see another value, possibly minor than 10000.
 */
 func RunConcurrencyRealProblem() {
 	http.HandleFunc("/", func(writer http.ResponseWriter, request *http.Request) {
