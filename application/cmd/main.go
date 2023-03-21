@@ -4,7 +4,7 @@ import "go-tour/multithreading"
 
 func main() {
 
-	multithreading.RunGoRoutinesWithWaitGroups()
+	multithreading.RunConcurrencyRealProblemAtomicSolver()
 
 	//database.RunDatabaseSql()
 	//database.RunDatabaseGorm()
