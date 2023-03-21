@@ -1,11 +1,13 @@
 package main
 
-import "go-tour/database"
+import "go-tour/multithreading"
 
 func main() {
 
+	multithreading.RunGoRoutinesWithWaitGroups()
+
 	//database.RunDatabaseSql()
-	database.RunDatabaseGorm()
+	//database.RunDatabaseGorm()
 
 	//context.RunContextForWebServer()
 
