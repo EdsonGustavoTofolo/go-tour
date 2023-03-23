@@ -2,6 +2,7 @@ package events
 
 import (
 	"errors"
+	"sync"
 )
 
 var (
@@ -34,9 +35,12 @@ func (e *EventDispatcherImpl) Register(eventName string, handler EventHandler) e
 
 func (e *EventDispatcherImpl) Dispatch(event Event) error {
 	if handlers, ok := e.handlers[event.GetName()]; ok {
+		wg := &sync.WaitGroup{}
 		for _, handler := range handlers {
-			handler.Handle(event)
+			wg.Add(1)
+			handler.Handle(event, wg)
 		}
+		wg.Wait()
 	}
 	return nil
 }
